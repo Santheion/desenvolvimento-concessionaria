@@ -1,0 +1,24 @@
+﻿@using Concessionaria.Web.Models
+@model DadosCarro
+
+@{
+    ViewBag.Title = "RegistroCarro";
+}
+
+<h2>Lista dos Dados do Carro</h2>
+<br/>
+<p>O carro registrado foi:</p>
+<div class="panel panel-success">
+    @Html.ValidationSummary(true)
+
+    @Html.LabelFor(c => c.NomeCarro)
+    @Html.EditorFor(c => c.NomeCarro, new { id = "txtNome", @class = "colorBg" })
+    @Html.ValidationMessageFor(c => c.NomeCarro)
+
+    <div class="panel-body">
+        <p><strong>Marca: </strong> @Model.Marca </p>
+        <p><strong>Cor: </strong> @Model.Cor  </p>
+        <p><strong>Ano: </strong> @Model.Ano </p>
+    </div>
+</div>
+
